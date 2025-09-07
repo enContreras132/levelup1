@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login Gamer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Fondo oscuro con degradado neón */
+        body {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffea;
+        }
+        .tarjeta-login {
+            backdrop-filter: blur(15px);
+            background: rgba(10, 10, 10, 0.75);
+            border: 1px solid #00ffea;
+            box-shadow: 0 0 20px #00ffea;
+            animation: aparecer 1.2s ease-out;
+        }
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .campo-input {
+            background: #121212;
+            border: 1px solid #00ffea;
+            color: #00ffea;
+            transition: all 0.3s ease;
+        }
+        .campo-input::placeholder {
+            color: #00ffeaaa;
+        }
+        .campo-input:focus {
+            box-shadow: 0 0 10px #00ffea;
+            outline: none;
+            border-color: #00ffea;
+        }
+        .boton-brillo {
+            background: linear-gradient(90deg, #00ffea, #0077ff);
+            box-shadow: 0 0 15px #00ffea;
+            transition: all 0.3s ease;
+            color: #000;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+        }
+        .boton-brillo:hover {
+            box-shadow: 0 0 25px #00ffea, 0 0 40px #0077ff;
+            transform: translateY(-3px);
+        }
+        a {
+            color: #00ffea;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #0077ff;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
 </head>
-<body>
-    <h1>hola</h1>
+<body class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="tarjeta-login p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 text-center">
+        <h2 class="text-4xl font-bold mb-6" style="color:#00ffea; text-shadow: 0 0 10px #00ffea;">Bienvenido Gamer</h2>
+
+        <form id="formLogin" class="space-y-6">
+            <div>
+                <input type="text" id="usuario" class="campo-input w-full px-4 py-3 rounded-lg placeholder:text-[#00ffeaaa]" placeholder="Nombre de usuario" required autocomplete="username" />
+            </div>
+            <div>
+                <input type="password" id="contrasena" class="campo-input w-full px-4 py-3 rounded-lg placeholder:text-[#00ffeaaa]" placeholder="Contraseña" required autocomplete="current-password" />
+            </div>
+            <button type="submit" class="boton-brillo w-full py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffea]">
+                Iniciar Sesión
+            </button>
+        </form>
+
+        <p class="mt-6" style="color:#00ffea;">
+            ¿Olvidaste tu contraseña? <a href="#">Recupérala aquí</a>
+        </p>
+    </div>
 </body>
+<script>
+    // Validación simple del formulario
+    const form = document.getElementById('formLogin');
+    const usuario = document.getElementById('usuario');
+    const contrasena = document.getElementById('contrasena');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (usuario.value.trim() === '') {
+            alert('Por favor, ingresa tu nombre de usuario.');
+            usuario.focus();
+            return;
+        }
+        if (contrasena.value.trim() === '') {
+            alert('Por favor, ingresa tu contraseña.');
+            contrasena.focus();
+            return;
+        }
+
+        alert('¡Inicio de sesión exitoso! Bienvenido.');
+        // Aquí puedes redirigir a otra página, por ejemplo:
+        // window.location.href = 'dashboard.html';
+    });
+</script>
 </html>
