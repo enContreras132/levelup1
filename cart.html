@@ -55,6 +55,7 @@
         <p class="text-gray-400">Tu carrito está vacío.</p>
       </div>
       <div id="resumen" class="mt-6 text-right text-xl font-semibold"></div>
+      <button id="btnPagar" class="btn-neon mt-4 px-6 py-3 rounded-lg" style="display:none;">Pagar</button>
       <button id="vaciarCarrito" class="btn-neon mt-6 px-6 py-3 rounded-lg" style="display:none;">Vaciar Carrito</button>
     </section>
   </div>
@@ -159,12 +160,15 @@
     // Mostrar carrito y resumen
     function actualizarCarrito() {
       carritoDiv.innerHTML = '';
+      btnPagar.addEventListener('click', () => {
       if (carrito.length === 0) {
-        carritoDiv.innerHTML = '<p class="text-gray-400">Tu carrito está vacío.</p>';
-        resumenDiv.textContent = '';
-        vaciarBtn.style.display = 'none';
+        alert('Tu carrito está vacío.');
         return;
       }
+      alert('Gracias por tu compra. ¡Pago realizado con éxito!');
+      carrito = [];
+      actualizarCarrito();
+    });
 
       vaciarBtn.style.display = 'inline-block';
 
