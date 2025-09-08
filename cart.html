@@ -107,7 +107,7 @@
         card.innerHTML = `
           <img src="${producto.imagen}" alt="${producto.nombre}" class="rounded-lg shadow-md" />
           <h3 class="text-xl font-semibold">${producto.nombre}</h3>
-          <p class="text-lg">$${producto.precio.toFixed(2)}</p>
+          <p class="text-lg">$${producto.precio.toFixed(0)}</p>
           <button class="btn-neon px-4 py-2 rounded-lg" data-id="${producto.id}">Agregar al carrito</button>
         `;
 
@@ -180,12 +180,12 @@
             <img src="${producto.imagen}" alt="${producto.nombre}" class="w-16 h-12 rounded" />
             <div>
               <p class="font-semibold">${producto.nombre}</p>
-              <p class="text-sm text-gray-400">Precio unitario: $${producto.precio.toFixed(2)}</p>
+              <p class="text-sm text-gray-400">Precio unitario: $${producto.precio.toFixed(0)}</p>
             </div>
           </div>
           <div class="flex items-center space-x-3">
             <input type="number" min="1" value="${item.cantidad}" class="w-16 text-black rounded px-2 py-1" data-id="${item.id}" />
-            <p class="w-20 text-right font-semibold">$${subtotal.toFixed(2)}</p>
+            <p class="w-20 text-right font-semibold">$${subtotal.toFixed(0)}</p>
             <button class="text-red-500 font-bold text-xl" data-id="${item.id}" title="Eliminar">&times;</button>
           </div>
         `;
@@ -219,7 +219,7 @@
         return acc + producto.precio * item.cantidad;
       }, 0);
 
-      resumenDiv.textContent = `Total: $${total.toFixed(2)}`;
+      resumenDiv.textContent = `Total: $${total.toFixed(0)}`;
     }
 
     // Inicializar
