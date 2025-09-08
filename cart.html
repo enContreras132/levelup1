@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carrito de Compras - Level Up</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -35,8 +34,6 @@
   <link href="css/responsive.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css">
-
-
   <style>
     body {
       background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
@@ -69,22 +66,12 @@
   </style>
 </head>
 <body class="min-h-screen p-6">
-  <a href="index.html"><h1 class="text-4xl font-bold mb-8 text-center" style="text-shadow: 0 0 10px #00ffea;">Level Up</h1></a>
+  <h1 class="text-4xl font-bold mb-8 text-center" style="text-shadow: 0 0 10px #00ffea;">Level Up</h1>
 
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
     <!-- Productos -->
     <section>
       <h2 class="text-2xl mb-4">Productos</h2>
-      <div class="container mt-5" style="margin-bottom: 40px;">
-      <div class="dropdown-container">
-       <button id="btnSearch" class="btn btn-primary btn-sm">Buscar</button>
-      <div id="dropdownContent" class="dropdown-menu-custom">
-        <input type="text" id="searchInput" class="form-control mb-2" placeholder="Escribe para buscar..." />
-        <ul id="resultsList" class="list-group" style="max-height: 200px; overflow-y: auto;">
-        </ul>
-      </div>
-      </div>
-    </div>
       <div id="productos" class="space-y-6">
         <!-- Productos se insertan aquí con JS -->
       </div>
@@ -96,7 +83,6 @@
       <div id="carrito" class="space-y-4">
         <p class="text-gray-400">Tu carrito está vacío.</p>
       </div>
-              
       <div id="resumen" class="mt-6 text-right text-xl font-semibold"></div>
       <button id="btnPagar" class="btn-neon mt-4 px-6 py-3 rounded-lg" style="display:none;">Pagar</button>
       <button id="vaciarCarrito" class="btn-neon mt-6 px-6 py-3 rounded-lg" style="display:none;">Vaciar Carrito</button>
@@ -132,7 +118,6 @@
       }
     ];
 
-    
     let carrito = [];
 
     // Referencias DOM
@@ -140,8 +125,8 @@
     const carritoDiv = document.getElementById('carrito');
     const resumenDiv = document.getElementById('resumen');
     const vaciarBtn = document.getElementById('vaciarCarrito');
+    const btnPagar = document.getElementById('btnPagar');
 
-    
     function mostrarProductos() {
       productosDiv.innerHTML = '';
       productosData.forEach(producto => {
@@ -167,7 +152,6 @@
       });
     }
 
-    // Agregar producto al carrito
     function agregarAlCarrito(id) {
       const productoEnCarrito = carrito.find(item => item.id === id);
       if (productoEnCarrito) {
@@ -178,13 +162,11 @@
       actualizarCarrito();
     }
 
-    // Eliminar producto del carrito
     function eliminarDelCarrito(id) {
       carrito = carrito.filter(item => item.id !== id);
       actualizarCarrito();
     }
 
-    // Cambiar cantidad
     function cambiarCantidad(id, cantidad) {
       if (cantidad < 1) return;
       const producto = carrito.find(item => item.id === id);
@@ -194,16 +176,12 @@
       }
     }
 
-    // Vaciar carrito
     vaciarBtn.addEventListener('click', () => {
       carrito = [];
       actualizarCarrito();
     });
 
-    // Mostrar carrito y resumen
-    function actualizarCarrito() {
-      carritoDiv.innerHTML = '';
-      btnPagar.addEventListener('click', () => {
+    btnPagar.addEventListener('click', () => {
       if (carrito.length === 0) {
         alert('Tu carrito está vacío.');
         return;
@@ -213,7 +191,18 @@
       actualizarCarrito();
     });
 
+    function actualizarCarrito() {
+      carritoDiv.innerHTML = '';
+      if (carrito.length === 0) {
+        carritoDiv.innerHTML = '<p class="text-gray-400">Tu carrito está vacío.</p>';
+        resumenDiv.textContent = '';
+        vaciarBtn.style.display = 'none';
+        btnPagar.style.display = 'none';
+        return;
+      }
+
       vaciarBtn.style.display = 'inline-block';
+      btnPagar.style.display = 'inline-block';
 
       carrito.forEach(item => {
         const producto = productosData.find(p => p.id === item.id);
@@ -240,7 +229,7 @@
         carritoDiv.appendChild(itemDiv);
       });
 
-      // Agregar eventos a inputs y botones eliminar
+      // Eventos inputs cantidad
       carritoDiv.querySelectorAll('input[type=number]').forEach(input => {
         input.addEventListener('change', (e) => {
           const id = parseInt(e.target.getAttribute('data-id'));
@@ -253,6 +242,7 @@
         });
       });
 
+      // Eventos botones eliminar
       carritoDiv.querySelectorAll('button').forEach(btn => {
         btn.addEventListener('click', () => {
           const id = parseInt(btn.getAttribute('data-id'));
@@ -273,7 +263,5 @@
     mostrarProductos();
     actualizarCarrito();
   </script>
-
-  <script src="/js/app.js"></script>
 </body>
 </html>
