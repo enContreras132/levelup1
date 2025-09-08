@@ -126,11 +126,16 @@
                   </g>
                 </svg>
               </a>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
+    <div class="container mt-5">
+      <div class="dropdown-container">
+       <button id="btnSearch" class="btn btn-primary btn-sm">Buscar</button>
+      <div id="dropdownContent" class="dropdown-menu-custom">
+        <input type="text" id="searchInput" class="form-control mb-2" placeholder="Escribe para buscar..." />
+        <ul id="resultsList" class="list-group" style="max-height: 200px; overflow-y: auto;">
+        </ul>
+      </div>
+      </div>
+    </div>
               <a href="" class="order_online">
                 Compra Ahora
               </a>
@@ -281,6 +286,7 @@
   </script>
   <!-- End Google Map -->
 
+  <script src="/js/app.js"></script>
 </body>
 
 </html>

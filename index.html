@@ -30,7 +30,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -56,8 +56,8 @@
 <body>
 
   <div class="hero_area">
-    <div class="bg-box">
-      <img src="https://www.levelupvlc.com/_next/image?url=https%3A%2F%2Fhebbkx1anhila5yf.public.blob.vercel-storage.com%2Flogo-portrait-ycwjxbJNaPbJdVE0WBtXX0TDDC1DMg.webp&w=256&q=75" alt="">
+    <div class="bg-box fondo">
+      <img src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">
@@ -149,11 +149,17 @@
                   </g>
                 </svg>
               </a>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
+    <div class="container mt-5">
+      <div class="dropdown-container">
+       <button id="btnSearch" class="btn btn-primary btn-sm">Buscar</button>
+      <div id="dropdownContent" class="dropdown-menu-custom">
+        <input type="text" id="searchInput" class="form-control mb-2" placeholder="Escribe para buscar..." />
+        <ul id="resultsList" class="list-group" style="max-height: 200px; overflow-y: auto;">
+        </ul>
+      </div>
+      </div>
+    </div>
+
               <a href="book.html" class="order_online">
                 Comprar Ahora
               </a>
@@ -1348,6 +1354,7 @@
   </script>
   <!-- End Google Map -->
 
+  <script src="/js/app.js"></script>
 </body>
 
 </html>
