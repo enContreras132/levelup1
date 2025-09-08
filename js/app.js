@@ -4,7 +4,7 @@
     const resultsList = document.getElementById('resultsList');
 
     const items = [
-      'Mouse','Teclado','Audifono','Procesador','Laptop','Mousepad','Parlante'
+      'Mouse Gamer Monster RGB','Audifonos Gamer Monster','Mouse Razer Cobra Pro HyperSpeed','Gamer Nitro V15 RTX 2050','Laptop','Mousepad','Parlante'
     ];
 
     // Mostrar/ocultar dropdown al hacer click en el botón
