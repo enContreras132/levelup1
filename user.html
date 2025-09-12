@@ -7,58 +7,8 @@
       <link rel="shortcut icon" href="https://www.levelupvlc.com/_next/image?url=https%3A%2F%2Fhebbkx1anhila5yf.public.blob.vercel-storage.com%2Flogo-portrait-ycwjxbJNaPbJdVE0WBtXX0TDDC1DMg.webp&w=256&q=75" type="">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Fondo oscuro con degradado neón */
-        body {
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-            font-family: 'Orbitron', sans-serif;
-            color: #00ffea;
-        }
-        .tarjeta-login {
-            backdrop-filter: blur(15px);
-            background: rgba(10, 10, 10, 0.75);
-            border: 1px solid #00ffea;
-            box-shadow: 0 0 20px #00ffea;
-            animation: aparecer 1.2s ease-out;
-        }
-        @keyframes aparecer {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .campo-input {
-            background: #121212;
-            border: 1px solid #00ffea;
-            color: #00ffea;
-            transition: all 0.3s ease;
-        }
-        .campo-input::placeholder {
-            color: #00ffeaaa;
-        }
-        .campo-input:focus {
-            box-shadow: 0 0 10px #00ffea;
-            outline: none;
-            border-color: #00ffea;
-        }
-        .boton-brillo {
-            background: linear-gradient(90deg, #00ffea, #0077ff);
-            box-shadow: 0 0 15px #00ffea;
-            transition: all 0.3s ease;
-            color: #000;
-            font-weight: 700;
-            letter-spacing: 1.2px;
-        }
-        .boton-brillo:hover {
-            box-shadow: 0 0 25px #00ffea, 0 0 40px #0077ff;
-            transform: translateY(-3px);
-        }
-        a {
-            color: #00ffea;
-            text-decoration: underline;
-        }
-        a:hover {
-            color: #0077ff;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/styleuser.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
 </head>
 
@@ -94,30 +44,5 @@
 
     
 </body>
-<script>
-    // Validación simple del formulario
-    const form = document.getElementById('formLogin');
-    const usuario = document.getElementById('usuario');
-    const contrasena = document.getElementById('contrasena');
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        if (usuario.value.trim() === '') {
-            alert('Por favor, ingresa tu nombre de usuario.');
-            usuario.focus();
-            return;
-        }
-        if (contrasena.value.trim() === '') {
-            alert('Por favor, ingresa tu contraseña.');
-            contrasena.focus();
-            return;
-        }
-
-        alert('¡Inicio de sesión exitoso! Bienvenido.');
-        // Aquí puedes redirigir a otra página, por ejemplo:
-        window.location.href = 'index.html';
-    });
-
-</script>
+<script src="/js/appuser.js"></script>
 </html>
