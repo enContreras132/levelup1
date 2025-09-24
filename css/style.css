@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #0c0c0c;
-  background-color: #ffffff;
+  font-family: "Arial", sans-serif;
+  color: #000000;
+  background-color: #3309c7;
   overflow-x: hidden;
 }
 
@@ -31,8 +31,9 @@ body {
 }
 
 h1,
-h2 {
-  font-family: 'Dancing Script', cursive;
+h2
+{
+  font-family: 'Share Tech', sans-serif;
 }
 
 .heading_container {
@@ -150,7 +151,7 @@ a:focus {
 }
 
 .navbar-brand {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Arial", sans-serif;
 }
 
 .navbar-brand span {
@@ -413,7 +414,7 @@ a:focus {
   margin-top: 45px;
   border-radius: 5px;
   padding: 20px 15px;
-  background-color: #222831;
+  background-color: #001e4b;
   color: #ffffff;
 }
 
@@ -437,13 +438,13 @@ a:focus {
 }
 
 .offer_section .box .detail-box h5 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Arial", sans-serif;
   font-size: 24px;
   margin: 0;
 }
 
 .offer_section .box .detail-box h6 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Arial", sans-serif;
   margin: 10px 0;
 }
 
@@ -500,7 +501,7 @@ a:focus {
 }
 
 .food_section .filters_menu li.active {
-  background-color: #222831;
+  background-color: #0066ff;
   color: #ffffff;
 }
 
@@ -512,7 +513,7 @@ a:focus {
   color: #ffffff;
   border-radius: 15px;
   overflow: hidden;
-  background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);
+  background: linear-gradient(to bottom, #f1f2f3 25px, #0066ff 25px);
 }
 
 .food_section .box .img-box {
@@ -617,7 +618,7 @@ a:focus {
 }
 
 .about_section {
-  background: #222831;
+  background: #0064f9;
   color: #ffffff;
 }
 
@@ -685,6 +686,7 @@ a:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+
 }
 
 .book_section .form_container .form-control::-webkit-input-placeholder {
@@ -789,7 +791,7 @@ a:focus {
 }
 
 .client_section .box .detail-box {
-  background-color: #222831;
+  background-color: #00a6ff;
   color: #ffffff;
   padding: 25px 25px 15px 25px;
   border-radius: 5px;
@@ -902,7 +904,7 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-  background-color: #222831;
+  background-color: #0066ff;
   color: #ffffff;
   padding: 75px 0 40px 0;
   text-align: center;
@@ -916,7 +918,7 @@ a:focus {
 .footer_section .footer-logo {
   font-weight: 600;
   margin-bottom: 20px;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Arial", sans-serif;
 }
 
 .footer_section p {
@@ -979,7 +981,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #222831;
+  color: #0066ff;
   width: 30px;
   height: 30px;
   border-radius: 100%;
@@ -1006,4 +1008,27 @@ a:focus {
 .footer_section .footer-info p a {
   color: inherit;
 }
+
+.dropdown-container {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-menu-custom {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 300px;
+      max-height: 300px;
+      background: white;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 0.25rem;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+      z-index: 1050;
+      padding: 15px;
+    }
+    .dropdown-menu-custom.show {
+      display: block;
+    }
+    
 /*# sourceMappingURL=style.css.map */

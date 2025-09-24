@@ -91,10 +91,8 @@
 
     btnPagar.addEventListener('click', () => {
       if (carrito.length === 0) {
-        alert('Tu carrito está vacío.');
         return;
       }
-      alert('Gracias por tu compra. ¡Pago realizado con éxito!');
       carrito = [];
       actualizarCarrito();
     });

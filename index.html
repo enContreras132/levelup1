@@ -30,28 +30,11 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
 
 </head>
-
-<!-- Modal de login -->
-<div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" aria-hidden="true" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:1050;">
-  <div class="modal-content" style="background:#fff; border-radius:8px; max-width:400px; width:90%; padding:30px 25px; position:relative; box-shadow:0 8px 24px rgba(0,0,0,0.15);">
-    <button class="close-btn" id="closeLogin" aria-label="Cerrar formulario" style="position:absolute; top:15px; right:20px; font-size:24px; color:#888; cursor:pointer; background:none; border:none;">&times;</button>
-    <h2 id="loginTitle" style="margin-top:0; margin-bottom:20px; font-weight:600; color:#222; text-align:center;">Iniciar sesión</h2>
-    <form id="loginForm" novalidate>
-      <label for="username" style="font-weight:600; margin-bottom:6px; color:#444;">Usuario</label><br />
-      <input type="text" id="username" name="username" autocomplete="username" required style="padding:10px 12px; margin-bottom:15px; border:1.5px solid #ccc; border-radius:5px; font-size:16px; width:100%;" aria-describedby="usernameError" />
-      <div class="error-message" id="usernameError" style="color:#d93025; font-size:14px; margin-top:-12px; margin-bottom:12px; display:none;">Por favor ingresa un usuario válido.</div>
-
-      <label for="password" style="font-weight:600; margin-bottom:6px; color:#444;">Contraseña</label><br />
-      <input type="password" id="password" name="password" autocomplete="current-password" required minlength="6" style="padding:10px 12px; margin-bottom:15px; border:1.5px solid #ccc; border-radius:5px; font-size:16px; width:100%;" aria-describedby="passwordError" />
-      <div class="error-message" id="passwordError" style="color:#d93025; font-size:14px; margin-top:-12px; margin-bottom:12px; display:none;">La contraseña debe tener al menos 6 caracteres.</div>
-
-      <button type="submit" style="background-color:#007bff; color:#fff; border:none; padding:12px; font-size:16px; border-radius:5px; cursor:pointer; font-weight:600; width:100%;">Entrar</button>
-    </form>
-  </div>
-</div>
 
 <body>
 
@@ -95,9 +78,20 @@
               </a>
               <a class="cart_link" href="cart.html">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                <path d="M0 24C0 10.7 10.7 0 24 0H69.5c10.3 0 
+                  19.4 6.6 22.6 16.4L96 32H552c13.3 0 
+                  24 10.7 24 24c0 2.6-.4 5.1-1.2 
+                   7.5l-72 240c-4.3 14.2-17.2 
+                  24-32 24H164.5l5.4 24H496c13.3 
+                  0 24 10.7 24 24s-10.7 24-24 
+                  24H152c-10.3 0-19.4-6.6-22.6-16.4L81.2 
+                  54.5 69.5 16H24C10.7 16 0 10.7 0 
+                  24zm160 400a48 48 0 1 1 96 0 48 48 
+                  0 1 1 -96 0zm288 0a48 48 0 1 1 96 
+                  0 48 48 0 1 1 -96 0z"/>
                 </svg>
               </a>
-    <div class="container mt-5">
+    <div>
       <div class="dropdown-container">
        <button id="btnSearch" class="btn btn-primary btn-sm">Buscar</button>
       <div id="dropdownContent" class="dropdown-menu-custom">
