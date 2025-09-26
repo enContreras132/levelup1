@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 body {
   font-family: "Arial", sans-serif;
   color: #000000;
@@ -37,16 +36,9 @@ h2
 }
 
 .heading_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: center;
+
 }
 
 .heading_container h2 {
@@ -146,6 +138,7 @@ a:focus {
 }
 
 .header_section .container-fluid {
+  display: flex;
   padding-right: 25px;
   padding-left: 25px;
 }
@@ -665,9 +658,12 @@ a:focus {
   background-color: #e69c00;
 }
 
-.book_section {
-  position: relative;
+
+.book_section .row{
+  display: flex;
+  justify-content: center;
 }
+
 
 .book_section .heading_container {
   margin-bottom: 25px;
@@ -715,7 +711,7 @@ a:focus {
   text-transform: uppercase;
   display: inline-block;
   padding: 10px 55px;
-  background-color: #ffbe33;
+  background-color: #000000;
   color: #ffffff;
   border-radius: 45px;
   -webkit-transition: all 0.3s;
@@ -724,7 +720,7 @@ a:focus {
 }
 
 .book_section .form_container button:hover {
-  background-color: #e69c00;
+  background-color: #00a6ff;
 }
 
 .book_section .map_container {
@@ -1030,5 +1026,7 @@ a:focus {
     .dropdown-menu-custom.show {
       display: block;
     }
+
+
     
 /*# sourceMappingURL=style.css.map */
