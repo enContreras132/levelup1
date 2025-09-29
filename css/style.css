@@ -675,7 +675,6 @@ a:focus {
   height: 50px;
   margin-bottom: 25px;
   padding-left: 25px;
-  border: 1px solid #999;
   outline: none;
   color: #000000;
   border-radius: 5px;
@@ -735,6 +734,16 @@ a:focus {
   min-height: 100%;
   width: 100%;
 }
+
+
+
+.form-controlador.falla p { 
+  color: rgb(255, 255, 255); 
+  background-color: #00000080;
+  border: solid 0.1px #000000;
+  display: inline-block;
+}
+
 
 /* client section start */
 .client_section .heading_container {

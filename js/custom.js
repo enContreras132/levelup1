@@ -81,8 +81,40 @@ const validacionCampos = ()=>{
 
     if (telefonoValor === ''){
         validaFalla(telefono, 'campo vacio')
-    } else {
+    } else if(validaTelefono(telefonoValor) === false){
+        validaFalla(telefono, 'el telefono no es valido')
+    }else {
         validaBien(telefono)        
+    }  
+
+    if(mailValor === ''){
+        validaFalla(mail, 'campo vacio');
+    } else if(!validaMail(mailValor)){
+    validaFalla(mail, 'el mail no es valido');
+    } else if(validaDuoc(mailValor)){
+        validaFalla(mail, 'ha ingresado con un mail DUOC');
+    } else {
+        validaBien(mail);
+    }
+    
+    if (rutValor === ''){
+        validaFalla(rut, 'campo vacio')
+    }else if (validaRut(rutValor) == false){
+        validaFalla(rut, 'el rut no es valido')
+    } else {
+        validaBien(rut)        
+    }  
+
+    if (nacimientoValor === ''){
+        validaFalla(nacimiento, 'campo vacio')
+    } else {
+        validaBien(nacimiento)        
+    }  
+
+    if (direccionValor === ''){
+        validaFalla(direccion, 'campo vacio')
+    } else {
+        validaBien(direccion)        
     }  
     
 }
@@ -97,7 +129,22 @@ const validaFalla = (input, msg)=>{
 
 const validaBien = (input)=>{
     const formControlador = input.parentElement
-
     formControlador.className = 'form-controlador bien'
+}
+
+const validaTelefono = (telefono) => {
+    return /^\+569\d{8}$/.test(telefono);
+}
+
+const validaMail = (mail) => {
+    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(mail);
+}
+
+const validaDuoc = (mail) => {
+    return /^[a-zA-Z0-9._%+-]+@duocuc.cl$/.test(mail);
+}
+
+const validaRut = (rut) => {
+    return /^0-9$/.test(rut);
 }
 });
