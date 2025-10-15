@@ -1,7 +1,7 @@
 body {
   font-family: "Arial", sans-serif;
-  color: #000000;
-  background-color: #3309c7;
+  color: #ffffff;
+  background-color: #1A244F;
   overflow-x: hidden;
 }
 
@@ -206,7 +206,7 @@ a:focus {
 }
 
 .user_option .user_link:hover {
-  color: #ffbe33;
+  color: #256890;
 }
 
 .user_option .cart_link {
@@ -235,7 +235,7 @@ a:focus {
 .user_option .order_online {
   display: inline-block;
   padding: 8px 30px;
-  background-color: #ffbe33;
+  background-color: #256890;
   color: #ffffff;
   border-radius: 45px;
   -webkit-transition: all 0.3s;
@@ -449,7 +449,7 @@ a:focus {
 .offer_section .box .detail-box a {
   display: inline-block;
   padding: 10px 30px;
-  background-color: #ffbe33;
+  background-color: #256890;
   color: #ffffff;
   border-radius: 45px;
   -webkit-transition: all 0.3s;
@@ -494,7 +494,7 @@ a:focus {
 }
 
 .food_section .filters_menu li.active {
-  background-color: #0066ff;
+  background-color: #256890;
   color: #ffffff;
 }
 
@@ -506,7 +506,7 @@ a:focus {
   color: #ffffff;
   border-radius: 15px;
   overflow: hidden;
-  background: linear-gradient(to bottom, #f1f2f3 25px, #0066ff 25px);
+  background: linear-gradient(to bottom, #f1f2f3 25px, #256890 25px);
 }
 
 .food_section .box .img-box {
@@ -611,7 +611,7 @@ a:focus {
 }
 
 .about_section {
-  background: #0064f9;
+  background: #256890;
   color: #ffffff;
 }
 
@@ -909,7 +909,7 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-  background-color: #0066ff;
+  background-color: #256890;
   color: #ffffff;
   padding: 75px 0 40px 0;
   text-align: center;
