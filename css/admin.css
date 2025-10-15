@@ -1,0 +1,48 @@
+/* Estilos para el panel de administración */
+body {
+    background-color: #212529; /* Fondo principal */
+    color: #f8f9fa;
+}
+
+/* --- Barra Lateral --- */
+#sidebar {
+    width: 280px;
+    height: 100vh; 
+    position: fixed; 
+    background-color: #343a40; 
+}
+
+#sidebar .nav-link {
+    color: #f8f9fa; /* Texto blanco */
+    transition: background-color 0.2s ease-in-out;
+}
+
+#sidebar .nav-link.active {
+    background-color: #0d6efd; 
+}
+
+#sidebar .nav-link:not(.active):hover {
+    background-color: #495057; 
+}
+
+/* --- Contenido Principal --- */
+#main-content {
+    margin-left: 280px; /* Deja espacio para la barra lateral */
+    width: calc(100% - 280px); /* Ocupa el resto del ancho */
+    padding: 2rem;
+}
+
+#content-title {
+    border-bottom: 1px solid #495057;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Estilos para las Tablas --- */
+.table {
+    --bs-table-bg: #343a40;
+    --bs-table-striped-bg: #3e444a;
+    --bs-table-hover-bg: #495057;
+    --bs-table-border-color: #495057;
+    --bs-table-color: #f8f9fa;
+}

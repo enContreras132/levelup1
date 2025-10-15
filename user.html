@@ -4,45 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login Gamer</title>
-      <link rel="shortcut icon" href="https://www.levelupvlc.com/_next/image?url=https%3A%2F%2Fhebbkx1anhila5yf.public.blob.vercel-storage.com%2Flogo-portrait-ycwjxbJNaPbJdVE0WBtXX0TDDC1DMg.webp&w=256&q=75" type="">
-
+    <link rel="shortcut icon" href="https://www.levelupvlc.com/_next/image?url=https%3A%2F%2Fhebbkx1anhila5yf.public.blob.vercel-storage.com%2Flogo-portrait-ycwjxbJNaPbJdVE0WBtXX0TDDC1DMg.webp&w=256&q=75" type="">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/css/styleuser.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
 </head>
-
 
 <body class="min-h-screen flex items-center justify-center relative overflow-hidden">
     <div class="tarjeta-login p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 text-center">
         <h2 class="text-4xl font-bold mb-6" style="color:#00ffea; text-shadow: 0 0 10px #00ffea;">Bienvenido Gamer</h2>
 
-        <form id="formLogin" class="space-y-6">
+        <form id="login-form" class="space-y-6">
             <div>
-                <input type="text" id="usuario" class="campo-input w-full px-4 py-3 rounded-lg placeholder:text-[#00ffeaaa]" placeholder="Nombre de usuario" required autocomplete="username" />
+                <input type="text" id="email" class="campo-input w-full px-4 py-3 rounded-lg placeholder:text-[#00ffeaaa]" placeholder="Nombre de usuario" required autocomplete="username" />
             </div>
             <div>
-                <input type="password" id="contrasena" class="campo-input w-full px-4 py-3 rounded-lg placeholder:text-[#00ffeaaa]" placeholder="Contraseña" required autocomplete="current-password" />
+                <input type="password" id="password" class="campo-input w-full px-4 py-3 rounded-lg placeholder:text-[#00ffeaaa]" placeholder="Contraseña" required autocomplete="current-password" />
             </div>
             <button type="submit" class="boton-brillo w-full py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffea]">
                 Iniciar Sesión
             </button>
-            <button type="submit" class="boton-brillo w-full py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffea]">
-                <a class="nav-link" href="index.html">Pagina Principal <span class="sr-only">(current)</span></a>
-            </button>
-                           
- 
+            
+            <a href="index.html" class="boton-brillo block w-full py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ffea] no-underline">
+                Pagina Principal
+            </a>
         </form>
 
-        
+        <div id="error-message" style="color: #ff5555; text-align: center; margin-top: 15px;"></div>
 
         <p class="mt-6" style="color:#00ffea;">
             ¿Olvidaste tu contraseña? <a href="#">Recupérala aquí</a>
         </p>
-        
     </div>
 
-    
+    <script type="module" src="js/appuser.js"></script>
 </body>
-<script src="/js/appuser.js"></script>
 </html>
