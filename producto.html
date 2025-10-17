@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre del Producto - Tu Tienda Gamer</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <style>
+      /* Pequeños estilos para mejorar la apariencia */
+      .producto-imagen-principal {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 10px;
+        background-color: #f8f9fa;
+      }
+      .producto-info h1 {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .producto-precio {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #007bff; /* Un color llamativo para el precio */
+        margin-bottom: 20px;
+      }
+      .btn-carrito {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+      }
+      .cantidad-input {
+        width: 80px;
+        text-align: center;
+        margin-right: 15px;
+      }
+      .seccion-detalles {
+        margin-top: 60px;
+        padding-top: 30px;
+        border-top: 1px solid #eee;
+      }
+    </style>
+</head>
+<body>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="https://www.winpy.cl/files/w38389_razer_cobra_pro_hyperspeed_00.jpg" alt="Mouse Razer Cobra Pro" class="img-fluid producto-imagen-principal">
+            </div>
+
+            <div class="col-lg-6 producto-info">
+                <h1>Mouse Razer Cobra Pro HyperSpeed</h1>
+
+                <p class="lead">
+                    Ratón gaming inalámbrico y ergonómico con iluminación Razer Chroma™ RGB y tecnología HyperSpeed para una respuesta ultrarrápida.
+                </p>
+
+                <div class="producto-precio">
+                    $124.640
+                </div>
+
+                <h5>Características Principales:</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-success"></i> Sensor óptico Focus Pro de 30 000 PPP</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Switches ópticos para ratón Razer™ de 3.ª gen</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Diseño ligero de 77 g</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Conectividad inalámbrica y Bluetooth</li>
+                </ul>
+
+                <hr>
+
+                <div class="d-flex align-items-center mt-4">
+                    <input type="number" id="cantidad" class="form-control cantidad-input" value="1" min="1">
+                    
+                    <a href="cart.html" class="btn btn-primary btn-lg btn-carrito">
+                        Añadir al Carrito <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row seccion-detalles">
+            <div class="col-12">
+                <h3>Descripción Completa</h3>
+                <p>
+                    Domina el juego con el Razer Cobra Pro, un ratón gaming inalámbrico y ligero con Razer Chroma RGB. Equipado con la tecnología Razer HyperSpeed Wireless y nuestro sensor y switches más avanzados, la velocidad y el control que obtendrás no tienen rival. Personaliza cada zona con más de 16,8 millones de colores e innumerables efectos de iluminación.
+                </p>
+
+                <h4 class="mt-4">¿Qué incluye la caja?</h4>
+                <ul>
+                    <li>Mouse Razer Cobra Pro</li>
+                    <li>Dongle inalámbrico HyperSpeed</li>
+                    <li>Cable Speedflex USB tipo A a USB tipo C</li>
+                    <li>Guía de información importante del producto</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnAnadir = document.getElementById('btnAnadirCarrito'); // Asegúrate que tu botón tenga este ID
+
+        if (btnAnadir) {
+            btnAnadir.addEventListener('click', function() {
+                
+                // 1. Recolecta la información del producto de la página
+                const productoInfo = {
+                    nombre: document.querySelector('.producto-info h1').textContent.trim(),
+                    // Limpiamos el precio para guardarlo como número
+                    precio: parseFloat(document.querySelector('.producto-precio').textContent.replace('$', '').replace(/\./g, '')),
+                    cantidad: parseInt(document.getElementById('cantidad').value),
+                    imagen: document.querySelector('.producto-imagen-principal').src
+                };
+
+                // 2. Carga el carrito existente de la memoria (o crea uno nuevo)
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+                // 3. Revisa si el producto ya estaba en el carrito para solo aumentar la cantidad
+                const productoExistente = carrito.find(item => item.nombre === productoInfo.nombre);
+
+                if (productoExistente) {
+                    productoExistente.cantidad += productoInfo.cantidad;
+                } else {
+                    carrito.push(productoInfo);
+                }
+
+                // 4. Guarda el carrito actualizado en la memoria 💾
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                // 5. Muestra una alerta y redirige al carrito
+                alert('¡Producto añadido al carrito!');
+                window.location.href = 'cart.html'; // ¡Verifica que el nombre del archivo es correcto!
+            });
+        }
+    });
+</script>
+</body>
+</html>
