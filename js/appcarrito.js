@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- INICIALIZACIÓN ---
+    
     // Al cargar la página, llama a la función para que muestre lo que hay guardado.
     actualizarVistaDelCarrito();
 });
