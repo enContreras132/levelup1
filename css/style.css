@@ -1040,6 +1040,43 @@ a:focus {
       display: block;
     }
 
+    
+
+
+.carrito-icono-wrapper {
+  position: absolute;   
+  bottom: 15px;         
+  right: 15px;          
+  width: 45px;          
+  height: 45px;         
+  background-color: #ffc107; 
+  border-radius: 50%;   
+  display: flex;        
+  align-items: center;  
+  justify-content: center; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  z-index: 5;          
+}
+
+/* El icono SVG del carrito */
+.carrito-icono {
+  width: 22px;          
+  height: 22px;         
+  fill: white;         
+}
+
+/* Asegura que el enlace contenedor funcione bien con position: absolute */
+.box > div {
+  position: relative; /* Opcional: Ayuda si hay problemas de superposición */
+}
+.detail-box {
+   padding-bottom: 60px; /* Añade espacio abajo para que el texto no choque con el icono */
+}
+.options h6 {
+   margin-bottom: 0; 
+}
+
+/* --- Fin de estilos para el icono --- */
 
     
 /*# sourceMappingURL=style.css.map */
