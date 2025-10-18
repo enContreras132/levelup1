@@ -477,6 +477,23 @@ a:focus {
           transform: scale(1.1);
 }
 
+.bbh-sans-bartle-regular{
+  font-family: "BBH Sans Bartle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.contenedor_padre{
+  display: flex;
+  margin: 40px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.seccion_mejores_2{
+  justify-content: center;
+    display: inline-block;
+
+}
+
 .food_section .filters_menu {
   padding: 0;
   display: -webkit-box;
@@ -563,10 +580,10 @@ a:focus {
 }
 
 .food_section .box .options a {
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  background: #ffbe33;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ffffff;
+  background: #1A244F;
+  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -578,11 +595,9 @@ a:focus {
           align-items: center;
 }
 
-.food_section .box .options a svg {
-  width: 18px;
-  height: auto;
-  fill: #ffffff;
-}
+.food_section .box .options a:hover{
+  background: #e69c00;
+} 
 
 .food_section .box:hover .img-box img {
   -webkit-transform: scale(1.1);
@@ -649,7 +664,7 @@ a:focus {
 .about_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #ffbe33;
+  background-color: #1A244F;
   color: #ffffff;
   border-radius: 45px;
   -webkit-transition: all 0.3s;
