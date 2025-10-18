@@ -24,6 +24,72 @@
 </head>
 <body>
 
+       <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Level Up
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto ">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Pagina Principal <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Nosotros</a>
+              </li>             
+            </ul>
+
+
+            <div class="user_option">
+              <a href="user.html" class="user_link">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+              <a class="cart_link" href="cart.html">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                <path d="M0 24C0 10.7 10.7 0 24 0H69.5c10.3 0 
+                  19.4 6.6 22.6 16.4L96 32H552c13.3 0 
+                  24 10.7 24 24c0 2.6-.4 5.1-1.2 
+                   7.5l-72 240c-4.3 14.2-17.2 
+                  24-32 24H164.5l5.4 24H496c13.3 
+                  0 24 10.7 24 24s-10.7 24-24 
+                  24H152c-10.3 0-19.4-6.6-22.6-16.4L81.2 
+                  54.5 69.5 16H24C10.7 16 0 10.7 0 
+                  24zm160 400a48 48 0 1 1 96 0 48 48 
+                  0 1 1 -96 0zm288 0a48 48 0 1 1 96 
+                  0 48 48 0 1 1 -96 0z"/>
+                </svg>
+              </a>
+    <div>
+      <div class="dropdown-container">
+       <button id="btnSearch" class="btn btn-primary btn-sm">Buscar</button>
+      <div id="dropdownContent" class="dropdown-menu-custom">
+        <input type="text" id="searchInput" class="form-control mb-2" placeholder="Escribe para buscar..." />
+        <ul id="resultsList" class="list-group" style="max-height: 200px; overflow-y: auto;">
+        </ul>
+      </div>
+      </div>
+    </div>
+
+              
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
     <div class="container my-5">
         <div class="row">
             <div class="col-lg-6">
