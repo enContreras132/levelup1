@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audífonos Gamer Rgb Altec Lansing Gh9602 - Level Up</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <style>
+        
+        .producto-imagen-principal { border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 10px; background-color: #f8f9fa; }
+        .producto-info h1 { font-weight: bold; margin-bottom: 20px; }
+        .producto-precio { font-size: 2.5rem; font-weight: 700; color: #007bff; margin-bottom: 20px; }
+        .btn-carrito { font-size: 1.2rem; padding: 12px 30px; }
+        .cantidad-input { width: 80px; text-align: center; margin-right: 15px; }
+        .seccion-detalles { margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="https://www.hites.com/dw/image/v2/BDPN_PRD/on/demandware.static/-/Sites-mastercatalog_HITES/default/dw64a8ce06/images/original/mkp/1017300180100/10173001801001_1.jpg?sw=1000&sh=1000" alt="Mouse Razer Cobra Pro" class="img-fluid producto-imagen-principal">
+            </div>
+            <div class="col-lg-6 producto-info">
+                <h1>Audífonos Gamer RGB Altec Lansing GH9602</h1>
+                <p class="lead">
+                    Audífonos gaming con iluminación RGB, sonido envolvente y micrófono ajustable para una experiencia de juego inmersiva.
+                </p>
+                <div class="producto-precio">$30.990</div>
+                <h5>Características Principales:</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-success"></i> Iluminación RGB personalizable</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Sonido envolvente 7.1</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Micrófono ajustable y desmontable</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Conectividad inalámbrica y Bluetooth</li>
+                </ul>
+                <hr>
+                <div class="d-flex align-items-center mt-4">
+                    <input type="number" id="cantidad" class="form-control cantidad-input" value="1" min="1">
+                    <button id="btnAnadirCarrito" class="btn btn-primary btn-lg btn-carrito">
+                        Añadir al Carrito <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row seccion-detalles">
+            <div class="col-12">
+                <h3>Descripción Completa</h3>
+                <p>Los audífonos Gamers de Altec Lansing ALGH9602 con USB 7.1 son flexibles y está diseñado para durar, capaz de resistir el uso diario y sin preocupaciones. Los materiales de alta calidad y el rendimiento en un diseño ultra cómodo son las características clave de los auriculares Altec Lansing Evolution. Equipado con controladores de neodimio de gran formato de 40 mm, un micrófono integrado y botones de navegación/telefonía de canciones, está listo para disfrutar de horas de música cómoda sin preocuparse por perder una llamada. Además, doble 3.5 mm.</p>
+                <h4 class="mt-4">¿Qué incluye la caja?</h4>
+                <ul>
+                    <li>Audífonos Gamer RGB Altec Lansing GH9602</li>
+                    <li>Adaptador USB tipo C a USB tipo A</li>
+                    <li>Almohadilla de micrófono</li>
+                    <li>Guía de información importante del producto</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQCtq4gl6aSdtFRzNEPJGLGn-S2bovLsAU=" crossorigin="anonymous"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnAnadir = document.getElementById('btnAnadirCarrito');
+    
+            if (btnAnadir) {
+                btnAnadir.addEventListener('click', function() {
+                    const productoInfo = {
+                        nombre: document.querySelector('.producto-info h1').textContent.trim(),
+                        precio: parseFloat(document.querySelector('.producto-precio').textContent.replace('$', '').replace(/\./g, '')),
+                        cantidad: parseInt(document.getElementById('cantidad').value),
+                        imagen: document.querySelector('.producto-imagen-principal').src
+                    };
+                    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                    const productoExistente = carrito.find(item => item.nombre === productoInfo.nombre);
+                    if (productoExistente) {
+                        productoExistente.cantidad += productoInfo.cantidad;
+                    } else {
+                        carrito.push(productoInfo);
+                    }
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                    alert('¡Producto añadido al carrito!');
+                    window.location.href = 'cart.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
