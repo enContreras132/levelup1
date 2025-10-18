@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre del Producto - Tu Tienda Gamer</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <style>
+        
+        .producto-imagen-principal { border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 10px; background-color: #f8f9fa; }
+        .producto-info h1 { font-weight: bold; margin-bottom: 20px; }
+        .producto-precio { font-size: 2.5rem; font-weight: 700; color: #007bff; margin-bottom: 20px; }
+        .btn-carrito { font-size: 1.2rem; padding: 12px 30px; }
+        .cantidad-input { width: 80px; text-align: center; margin-right: 15px; }
+        .seccion-detalles { margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="https://p4-ofp.static.pub//fes/cms/2025/05/22/bbh4okj51q0s8dnrsp89vypi3l1nmz317151.png" alt="Mouse Lenovo Legion" class="img-fluid producto-imagen-principal">
+            </div>
+            <div class="col-lg-6 producto-info">
+                <h1>Mouse Lenovo Legion</h1>
+                <p class="lead">
+                    Ratón gaming inalámbrico y ergonómico con iluminación RGB y tecnología de respuesta ultrarrápida.
+                </p>
+                <div class="producto-precio">$59.990</div>
+                <h5>Características Principales:</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-success"></i> Sensor óptico de alta precisión</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Switches ópticos para ratón Lenovo™ de 3.ª gen</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Diseño ligero y ergonómico</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Conectividad inalámbrica y con cable USB</li>
+                </ul>
+                <hr>
+                <div class="d-flex align-items-center mt-4">
+                    <input type="number" id="cantidad" class="form-control cantidad-input" value="1" min="1">
+                    <button id="btnAnadirCarrito" class="btn btn-primary btn-lg btn-carrito">
+                        Añadir al Carrito <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row seccion-detalles">
+            <div class="col-12">
+                <h3>Descripción Completa</h3>
+                <p>El mouse para juegos inalámbricos Lenovo™ Legion M600 Sports posee una batería de larga duración y de carga rápida, ideal para las exigentes sesiones de juegos. Su diseño ergonómico lo hace cómodo para los usuarios, tanto para la postura de garra como para la postura de palma de la mano, además de los jugadores diestros y zurdos. Con el M600 a su lado, dominará los últimos títulos con hasta 16.000 DPI (ajustables a través de un conmutador rápido de DPI) y espectaculares efectos de iluminación gracias a los 16,8 millones de colores en dos zonas LED configurables.</p>
+                <h4 class="mt-4">¿Qué incluye la caja?</h4>
+                <ul>
+                    <li>Mouse Lenovo Legion M600</li>
+                    <li>Adaptador USB Inalámbrico</li>
+                    <li>Stickers personalizados</li>
+                    <li>Guía de información importante del producto</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQCtq4gl6aSdtFRzNEPJGLGn-S2bovLsAU=" crossorigin="anonymous"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnAnadir = document.getElementById('btnAnadirCarrito');
+    
+            if (btnAnadir) {
+                btnAnadir.addEventListener('click', function() {
+                    const productoInfo = {
+                        nombre: document.querySelector('.producto-info h1').textContent.trim(),
+                        precio: parseFloat(document.querySelector('.producto-precio').textContent.replace('$', '').replace(/\./g, '')),
+                        cantidad: parseInt(document.getElementById('cantidad').value),
+                        imagen: document.querySelector('.producto-imagen-principal').src
+                    };
+                    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                    const productoExistente = carrito.find(item => item.nombre === productoInfo.nombre);
+                    if (productoExistente) {
+                        productoExistente.cantidad += productoInfo.cantidad;
+                    } else {
+                        carrito.push(productoInfo);
+                    }
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                    alert('¡Producto añadido al carrito!');
+                    window.location.href = 'cart.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
